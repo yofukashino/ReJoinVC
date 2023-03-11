@@ -1,3 +1,3 @@
 export const defaultSettings = {
-  time: "10000",
+  time: 10000,
 };

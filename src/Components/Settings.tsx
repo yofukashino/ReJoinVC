@@ -1,4 +1,4 @@
-import { common, components, util } from "replugged";
+import { components, util } from "replugged";
 import { PluginLogger, SettingValues } from "../index";
 import { defaultSettings } from "../lib/consts";
 const { SliderItem } = components;
@@ -15,10 +15,11 @@ export const Settings = (): Types.ReactElement => {
     <div>
       <SliderItem
         {...{
+          ...util.useSetting(SettingValues, "time", defaultSettings.time),
           note: "The amount of time to show the button after disconnecting.",
           minValue: 5000,
           maxValue: 60000,
-          onValueRender: (value) => {
+          onValueRender: (value: number) => {
             const seconds = value / 1000;
             const minutes = value / 1000 / 60;
             return value < 60000 ? `${seconds.toFixed(0)} secs` : `${minutes.toFixed(0)} min`;
