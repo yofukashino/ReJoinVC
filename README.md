@@ -4,6 +4,8 @@ Easily rejoin a voice chat you've recently left by clicking on a button.
 
 This plugin is compatible with plugins like Game Activity Toggle.
 
+Download Link:
+
 [Tharki.ReJoinVC.asar](https://github.com/Tharki-God/ReJoinVC/releases/latest/download/Tharki.ReJoinVC.asar)
 
 Install Link:
