@@ -1,6 +1,6 @@
 {
   "name": "rejoin-vc",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Allows you to rejoin a voice channel by clicking on a button within specified time of leaving.",
   "engines": {
     "node": ">=14.0.0"
@@ -30,7 +30,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-react": "^7.31.10",
     "prettier": "^2.8.1",
-    "replugged": "^4.1.0",
+    "replugged": "^4.2.2",
     "typescript": "^4.8.4"
   }
 }
