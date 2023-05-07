@@ -37,6 +37,7 @@ export interface ChannelActions {
   selectVoiceChannel: DefaultTypes.AnyFunction;
 }
 export interface Voice {
+  event: { [index: string]: unknown };
   channelId: null | string;
   currentVoiceChannelId: null | string;
   guildId: undefined | string;
@@ -70,7 +71,7 @@ export interface ContextMenu {
     options?: { enableSpellCheck?: boolean },
   ) => void;
 }
-
+export type FluxCallback = (event?: { [index: string]: unknown }) => void;
 export interface SliderComponent {
   $$typeof: symbol;
   render: DefaultTypes.AnyFunction;
