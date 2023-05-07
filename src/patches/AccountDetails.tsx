@@ -29,7 +29,10 @@ export const patchPanelButton = (voice: Types.Voice): void => {
             onClick: () => {
               PluginInjector.uninjectAll();
               ChannelActions.selectVoiceChannel(voice.currentVoiceChannelId);
-              Utils.forceUpdate(document.querySelector(`.${AccountDetailsClasses.container}`));
+              const AccountDetailsElement = document.querySelector(
+                `.${AccountDetailsClasses.container}:not(.spotify-modal)`,
+              ) as HTMLElement;
+              Utils.forceUpdate(AccountDetailsElement);
             },
             onContextMenu: (event: Types.MouseEvent) =>
               ContextMenuApi.open(event, ((e: Types.ContextMenuArgs) => (
