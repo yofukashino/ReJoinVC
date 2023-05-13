@@ -4,7 +4,7 @@ import "./style.css";
 import { registerSettings } from "./Components/Settings";
 export const PluginInjector = new Injector();
 export const PluginLogger = Logger.plugin("ReJoinVC");
-export const SettingValues = await settings.init("Tharki.ReJoinVC", defaultSettings);
+export const SettingValues = await settings.init("dev.tharki.ReJoinVC", defaultSettings);
 export const { fluxDispatcher: FluxDispatcher, contextMenu: ContextMenuApi } = common;
 export const { ContextMenu } = components;
 export const disapperTimeouts = new Set<ReturnType<typeof setTimeout>>();

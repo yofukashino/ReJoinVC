@@ -1,5 +1,5 @@
 {
-  "id": "Tharki.ReJoinVC",
+  "id": "dev.tharki.ReJoinVC",
   "name": "ReJoinVC",
   "description": "Allows you to rejoin a voice channel by clicking on a button within specified time of leaving.",
   "author": {
@@ -7,7 +7,7 @@
     "discordID": "1025214794766221384",
     "github": "Tharki-God"
   },
-  "version": "0.9.6",
+  "version": "0.9.7",
   "updater": {
     "type": "github",
     "id": "Tharki-God/ReJoinVC"

@@ -6,7 +6,7 @@ This plugin is compatible with plugins like Game Activity Toggle.
 
 Download Link:
 
-[Tharki.ReJoinVC.asar](https://github.com/Tharki-God/ReJoinVC/releases/latest/download/Tharki.ReJoinVC.asar)
+[dev.tharki.ReJoinVC.asar](https://github.com/Tharki-God/ReJoinVC/releases/latest/download/dev.tharki.ReJoinVC.asar)
 
 Install Link:
 
@@ -19,5 +19,10 @@ Install Link:
 
 <sub>All the code is rightfully owned by TheShadowGamer. This is a ported plugin and the
 [original license](https://github.com/Tharki-God/ReJoinVC/blob/main/License) is attached.</sub>
+
+> For issues related to plugin either DM the dev or ask in support server listed below.
+>If making a post in support channel on replugged server then ping me!
+>
+> [![Support Server](https://discordapp.com/api/guilds/919649417005506600/widget.png?style=banner3)](https://discord.gg/SgKSKyh9gY)
 
 > For Contributing: [Make a pr thats all.]
