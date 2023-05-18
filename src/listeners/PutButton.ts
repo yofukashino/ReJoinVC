@@ -6,13 +6,14 @@ import * as Types from "../types";
 
 export const PutButton: unknown = (voice: Types.Voice): void => {
   if (voice?.currentVoiceChannelId == null) return;
-  const AccountDetailsElement = document.querySelector(
-    `.${AccountDetailsClasses.container}:not(.spotify-modal)`,
-  );
   PluginInjector.uninjectAll();
-  Utils.forceUpdate(AccountDetailsElement as HTMLElement);
+  Utils.forceUpdate(
+    document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
+  );
   patchPanelButton(voice);
-  Utils.forceUpdate(AccountDetailsElement as HTMLElement);
+  Utils.forceUpdate(
+    document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
+  );
   if (disapperTimeouts.size) {
     for (const timeout of Array.from(disapperTimeouts)) clearTimeout(timeout);
     disapperTimeouts.clear();
@@ -20,7 +21,9 @@ export const PutButton: unknown = (voice: Types.Voice): void => {
   disapperTimeouts.add(
     setTimeout(() => {
       PluginInjector.uninjectAll();
-      Utils.forceUpdate(AccountDetailsElement as HTMLElement);
+      Utils.forceUpdate(
+        document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
+      );
     }, SettingValues.get("time")),
   );
 };
