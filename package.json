@@ -1,6 +1,6 @@
 {
   "name": "rejoin-vc",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Allows you to rejoin a voice channel by clicking on a button within specified time of leaving.",
   "engines": {
     "node": ">=14.0.0"
