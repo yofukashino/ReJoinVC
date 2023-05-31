@@ -7,7 +7,11 @@ export const PluginLogger = Logger.plugin("ReJoinVC");
 export const SettingValues = await settings.init("dev.tharki.ReJoinVC", defaultSettings);
 export const { fluxDispatcher: FluxDispatcher, contextMenu: ContextMenuApi } = common;
 export const { ContextMenu } = components;
-export const disapperTimeouts = new Set<ReturnType<typeof setTimeout>>();
+export const RejoinConsts = {
+  disapperTimeouts: new Set<ReturnType<typeof setTimeout>>(),
+  buttonShouldExist: false,
+  voice: null,
+};
 import { addListeners, removeListeners } from "./listeners/index";
 
 export const start = (): void => {
@@ -19,4 +23,7 @@ export const stop = (): void => {
   PluginInjector.uninjectAll();
   removeListeners();
 };
+
+export { addPanelButton } from "./patches/index";
+
 export { Settings } from "./Components/Settings.jsx";

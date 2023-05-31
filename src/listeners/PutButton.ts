@@ -1,26 +1,28 @@
-import { PluginInjector, SettingValues, disapperTimeouts } from "../index";
+import { RejoinConsts, SettingValues } from "../index";
 import { AccountDetailsClasses } from "../lib/requiredModules";
-import { patchPanelButton } from "../patches/AccountDetails";
 import * as Utils from "../lib/utils";
 import * as Types from "../types";
 
 export const PutButton: unknown = (voice: Types.Voice): void => {
   if (voice?.currentVoiceChannelId == null) return;
-  PluginInjector.uninjectAll();
+  RejoinConsts.buttonShouldExist = false;
+  RejoinConsts.voice = null;
   Utils.forceUpdate(
     document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
   );
-  patchPanelButton(voice);
+  RejoinConsts.buttonShouldExist = true;
+  RejoinConsts.voice = voice;
   Utils.forceUpdate(
     document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
   );
-  if (disapperTimeouts.size) {
-    for (const timeout of Array.from(disapperTimeouts)) clearTimeout(timeout);
-    disapperTimeouts.clear();
+  if (RejoinConsts.disapperTimeouts.size) {
+    for (const timeout of Array.from(RejoinConsts.disapperTimeouts)) clearTimeout(timeout);
+    RejoinConsts.disapperTimeouts.clear();
   }
-  disapperTimeouts.add(
+  RejoinConsts.disapperTimeouts.add(
     setTimeout(() => {
-      PluginInjector.uninjectAll();
+      RejoinConsts.buttonShouldExist = false;
+      RejoinConsts.voice = null;
       Utils.forceUpdate(
         document.querySelector(`.${AccountDetailsClasses.container}:not(.spotify-modal)`),
       );
