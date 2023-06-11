@@ -2,13 +2,12 @@ import { components, util } from "replugged";
 import { SettingValues } from "../index";
 import { defaultSettings } from "../lib/consts";
 import { SliderComponent } from "../lib/requiredModules";
-import * as Types from "../types";
 
 const {
   ContextMenu: { ContextMenu, MenuControlItem },
 } = components;
 
-export const ReJoinContextMenu = (props: Types.ExtendedContextMenuArgs) => {
+export const ReJoinContextMenu = (props) => {
   return (
     <ContextMenu {...{ ...props, navId: "tharki" }}>
       <MenuControlItem

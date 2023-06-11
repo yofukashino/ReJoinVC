@@ -20,9 +20,9 @@ export const addPanelButton = (): Types.ReactElement | null => {
           Utils.forceUpdate(AccountDetailsElement);
         },
         onContextMenu: (event: Types.MouseEvent) =>
-          ContextMenuApi.open(event, ((e: Types.ContextMenuArgs) => (
+          ContextMenuApi.open(event, (e) => (
             <ReJoinContextMenu {...Object.assign({}, e, { onClose: ContextMenuApi.close })} />
-          )) as unknown as Types.ContextMenu),
+          )),
       }}
     />
   );

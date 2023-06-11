@@ -45,32 +45,6 @@ export interface Voice {
   type: string;
   video: boolean;
 }
-export interface ContextMenuArgs {
-  className: string;
-  config: { context: string };
-  context: string;
-  onHeightUpdate: DefaultTypes.AnyFunction;
-  position: null | number;
-  target: HTMLElement;
-  theme: string;
-}
-export interface ExtendedContextMenuArgs extends ContextMenuArgs {
-  onClose: DefaultTypes.AnyFunction;
-}
-export interface ContextMenu {
-  close: DefaultTypes.AnyFunction;
-  open: (
-    event: React.UIEvent,
-    render?: ContextMenu,
-    options?: { enableSpellCheck?: boolean },
-    renderLazy?: Promise<ContextMenu>,
-  ) => void;
-  openLazy: (
-    event: React.UIEvent,
-    renderLazy?: Promise<ContextMenu>,
-    options?: { enableSpellCheck?: boolean },
-  ) => void;
-}
 export type FluxCallback = (event?: { [index: string]: unknown }) => void;
 export interface SliderComponent {
   $$typeof: symbol;
