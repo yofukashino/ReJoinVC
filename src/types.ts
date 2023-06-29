@@ -37,15 +37,14 @@ export interface ChannelActions {
   selectVoiceChannel: DefaultTypes.AnyFunction;
 }
 export interface Voice {
-  event: { [index: string]: unknown };
-  channelId: null | string;
-  currentVoiceChannelId: null | string;
-  guildId: undefined | string;
-  stream: boolean;
-  type: string;
-  video: boolean;
+  [index: string]: unknown;
+  channelId?: null | string;
+  currentVoiceChannelId?: null | string;
+  guildId?: undefined | string;
+  stream?: boolean;
+  type?: string;
+  video?: boolean;
 }
-export type FluxCallback = (event?: { [index: string]: unknown }) => void;
 export interface SliderComponent {
   $$typeof: symbol;
   render: DefaultTypes.AnyFunction;
