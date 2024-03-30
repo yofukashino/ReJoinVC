@@ -34,7 +34,7 @@ export const RejoinPanelButton = (): React.ReactElement | null => {
 
   return lastChannelId ? (
     <PanelButton
-      icon={() => <Icons.callJoin width="20" height="20" />}
+      icon={() => <Icons.callJoin width="18" height="18" />}
       tooltipText="Rejoin Voice Channel"
       onClick={() => {
         ChannelActions.selectVoiceChannel(lastChannelId);
