@@ -3,16 +3,16 @@
   "name": "ReJoinVC",
   "description": "Allows you to rejoin a voice channel by clicking on a button within specified time of leaving.",
   "image": "https://i.imgur.com/49BUJjm.png",
-  "source": "https://github.com/Tharki-God/ReJoinVC",
+  "source": "https://github.com/YofukashiNo/ReJoinVC",
   "author": {
-    "name": "Ahlawat",
-    "discordID": "1025214794766221384",
-    "github": "Tharki-God"
+    "name": "Nanakusa",
+    "discordID": "1121961711080050780",
+    "github": "YofukashiNo"
   },
   "version": "1.0.3",
   "updater": {
     "type": "github",
-    "id": "Tharki-God/ReJoinVC"
+    "id": "YofukashiNo/ReJoinVC"
   },
   "license": "MIT",
   "type": "replugged-plugin",

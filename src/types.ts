@@ -1,55 +1,59 @@
-import { types as DefaultTypes } from "replugged";
-export { types as DefaultTypes } from "replugged";
-export { ReactElement, ComponentClass, MouseEvent } from "react";
+import { types } from "replugged";
+import type { components } from "replugged/common";
+import { ContextMenuProps } from "replugged/dist/renderer/modules/components/ContextMenu";
+import { Store } from "replugged/dist/renderer/modules/common/flux";
 
-export interface AccountDetailsClasses {
-  accountProfilePopoutWrapper: string;
-  avatar: string;
-  avatarWrapper: string;
-  buildOverrideButton: string;
-  canCopy: string;
-  container: string;
-  copySuccess: string;
-  customStatus: string;
-  emoji: string;
-  godlike: string;
-  hasBuildOverride: string;
-  nameTag: string;
-  panelSubtextContainer: string;
-  panelTitleContainer: string;
-  redIcon: string;
-  statusTooltip: string;
-  strikethrough: string;
-  usernameContainer: string;
-  withTagAsButton: string;
-  withTagless: string;
-}
-export interface AccountDetails {
-  AccountDetails: DefaultTypes.AnyFunction;
-}
-export interface GenericModule {
-  [key: string]: DefaultTypes.AnyFunction;
-}
-export interface ChannelActions {
-  disconnect: DefaultTypes.AnyFunction;
-  selectChannel: DefaultTypes.AnyFunction;
-  selectPrivateChannel: DefaultTypes.AnyFunction;
-  selectVoiceChannel: DefaultTypes.AnyFunction;
-}
-export interface Voice {
-  [index: string]: unknown;
-  channelId?: null | string;
-  currentVoiceChannelId?: null | string;
-  guildId?: undefined | string;
-  stream?: boolean;
-  type?: string;
-  video?: boolean;
-}
-export interface SliderComponent {
-  $$typeof: symbol;
-  render: DefaultTypes.AnyFunction;
-}
+export namespace Types {
+  export import DefaultTypes = types;
+  export type MenuProps = ContextMenuProps["ContextMenu"] & { children: React.ReactElement[] };
+  export type GenericModule = Record<string, DefaultTypes.AnyFunction>;
+  export type DiscordComponents = typeof components & {
+    MenuSliderControl: React.ComponentType<{
+      value: number;
+      minValue: number;
+      maxValue: number;
+      onChange: (e: number) => void;
+      renderValue?: (e: number) => string;
+      "aria-label"?: string;
+    }>;
+  };
+  export interface SelectedChannelStore extends Store {
+    getChannelId: DefaultTypes.AnyFunction;
+    getCurrentlySelectedChannelId: DefaultTypes.AnyFunction;
+    getLastChannelFollowingDestination: DefaultTypes.AnyFunction;
+    getLastSelectedChannelId: DefaultTypes.AnyFunction;
+    getLastSelectedChannels: DefaultTypes.AnyFunction;
+    getMostRecentSelectedTextChannelId: DefaultTypes.AnyFunction;
+    getVoiceChannelId: () => string;
+  }
+  export interface ChannelActions {
+    disconnect: DefaultTypes.AnyFunction;
+    selectChannel: DefaultTypes.AnyFunction;
+    selectPrivateChannel: DefaultTypes.AnyFunction;
+    selectVoiceChannel: DefaultTypes.AnyFunction;
+  }
+  export interface Voice {
+    [index: string]: unknown;
+    channelId?: null | string;
+    currentVoiceChannelId?: null | string;
+    guildId?: undefined | string;
+    stream?: boolean;
+    type?: string;
+    video?: boolean;
+  }
+  export interface SliderComponent {
+    $$typeof: symbol;
+    render: DefaultTypes.AnyFunction;
+  }
 
-export interface Settings {
-  time: number;
+  export interface Settings {
+    time: number;
+  }
+  export type PanelButton = React.ComponentClass<{
+    onContextMenu?: (event: React.MouseEvent) => void;
+    icon?: () => React.ReactNode;
+    tooltipText?: string;
+    onClick?: () => void;
+  }>;
 }
+export default Types;
