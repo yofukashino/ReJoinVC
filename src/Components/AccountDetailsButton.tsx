@@ -14,7 +14,7 @@ export const RejoinPanelButton = (): React.ReactElement | null => {
     (previous, current) => {
       if (
         current?.currentChannelId !== previous?.currentChannelId &&
-        previous?.currentChannelId !== null
+        previous?.currentChannelId != null
       ) {
         setLastChannelId(() => previous?.currentChannelId);
       }
@@ -23,7 +23,7 @@ export const RejoinPanelButton = (): React.ReactElement | null => {
   );
 
   React.useEffect(() => {
-    if (lastChannelId == null || currentChannelId == lastChannelId) return;
+    if (lastChannelId == null || currentChannelId === lastChannelId) return () => {};
     const timeout = setTimeout(() => {
       setLastChannelId(() => null);
     }, SettingValues.get("time"));
