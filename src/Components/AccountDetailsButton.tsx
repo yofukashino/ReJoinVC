@@ -1,9 +1,10 @@
 import { contextMenu as ContextMenuApi, flux as Flux, React } from "replugged/common";
 import { SettingValues } from "../index";
-import { ChannelActions, PanelButton, SelectedChannelStore } from "../lib/requiredModules";
-import { ReJoinContextMenu } from "../Components/ContextMenu";
+import Modules from "../lib/requiredModules";
+import ReJoinContextMenu from "../Components/ContextMenu";
 import Icons from "../Components/Icons";
 export const RejoinPanelButton = (): React.ReactElement | null => {
+  const { ChannelActions, PanelButton, SelectedChannelStore } = Modules;
   const [lastChannelId, setLastChannelId] = React.useState<string | null>(null);
   const { currentChannelId } = Flux.useStateFromStores(
     [SelectedChannelStore],
@@ -49,4 +50,7 @@ export const RejoinPanelButton = (): React.ReactElement | null => {
   ) : null;
 };
 
-export default () => <RejoinPanelButton />;
+export default () =>
+  Modules.ChannelActions && Modules.PanelButton && Modules.SelectedChannelStore ? (
+    <RejoinPanelButton />
+  ) : null;

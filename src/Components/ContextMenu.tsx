@@ -5,7 +5,7 @@ import { SettingValues } from "../index";
 import { defaultSettings } from "../lib/consts";
 import Types from "../types";
 const { MenuSliderControl } = components as Types.DiscordComponents;
-export const ReJoinContextMenu = (props) => {
+export default (props) => {
   return (
     <ContextMenu.ContextMenu {...props} navId="yofukashino">
       <ContextMenu.MenuControlItem

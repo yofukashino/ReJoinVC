@@ -45,15 +45,21 @@ export namespace Types {
     $$typeof: symbol;
     render: DefaultTypes.AnyFunction;
   }
-
-  export interface Settings {
-    time: number;
-  }
   export type PanelButton = React.ComponentClass<{
     onContextMenu?: (event: React.MouseEvent) => void;
     icon?: () => React.ReactNode;
     tooltipText?: string;
     onClick?: () => void;
   }>;
+  export interface Modules {
+    loadModules?: () => Promise<void>;
+    SelectedChannelStore?: SelectedChannelStore;
+    PanelButton?: PanelButton;
+    ChannelActions?: ChannelActions;
+  }
+
+  export interface Settings {
+    time: number;
+  }
 }
 export default Types;

@@ -28,3 +28,5 @@ export const Settings = (): React.ReactElement => {
     </div>
   );
 };
+
+export default { registerSettings, Settings };

@@ -1,9 +1,16 @@
 import { webpack } from "replugged";
 import Types from "../types";
 
-export const PanelButton = webpack.getBySource<Types.PanelButton>("Masks.PANEL_BUTTON");
+export const Modules: Types.Modules = {};
 
-export const ChannelActions = webpack.getByProps<Types.ChannelActions>("selectChannel");
+Modules.loadModules = async (): Promise<void> => {
+  Modules.SelectedChannelStore =
+    webpack.getByStoreName<Types.SelectedChannelStore>("SelectedChannelStore");
+  Modules.PanelButton = await webpack.waitForModule<Types.PanelButton>(
+    webpack.filters.bySource("Masks.PANEL_BUTTON"),
+  );
 
-export const SelectedChannelStore =
-  webpack.getByStoreName<Types.SelectedChannelStore>("SelectedChannelStore");
+  Modules.ChannelActions = await webpack.waitForProps<Types.ChannelActions>("selectChannel");
+};
+
+export default Modules;

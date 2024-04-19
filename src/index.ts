@@ -1,13 +1,15 @@
 import { Injector, Logger, settings } from "replugged";
 import { defaultSettings } from "./lib/consts";
+import Settings from "./Components/Settings";
+import Modules from "./lib/requiredModules";
 import "./style.css";
-import { registerSettings } from "./Components/Settings";
 export const PluginInjector = new Injector();
 export const PluginLogger = Logger.plugin("ReJoinVC");
 export const SettingValues = await settings.init("dev.tharki.ReJoinVC", defaultSettings);
 
 export const start = (): void => {
-  registerSettings();
+  Settings.registerSettings();
+  void Modules.loadModules();
 };
 
 export { default as _addPanelButton } from "./Components/AccountDetailsButton";
