@@ -9,7 +9,7 @@ export const SettingValues = await settings.init("dev.tharki.ReJoinVC", defaultS
 
 export const start = (): void => {
   Settings.registerSettings();
-  void Modules.loadModules();
+  void Modules.loadModules().catch((err) => PluginLogger.error(err));
 };
 
 export { default as _addPanelButton } from "./Components/AccountDetailsButton";

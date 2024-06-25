@@ -1,4 +1,4 @@
-import { contextMenu as ContextMenuApi, flux as Flux, React } from "replugged/common";
+import { contextMenu as ContextMenuApi, fluxHooks as FluxHooks, React } from "replugged/common";
 import { SettingValues } from "../index";
 import Modules from "../lib/requiredModules";
 import ReJoinContextMenu from "../Components/ContextMenu";
@@ -6,7 +6,7 @@ import Icons from "../Components/Icons";
 export const RejoinPanelButton = (): React.ReactElement | null => {
   const { ChannelActions, PanelButton, SelectedChannelStore } = Modules;
   const [lastChannelId, setLastChannelId] = React.useState<string | null>(null);
-  const { currentChannelId } = Flux.useStateFromStores(
+  const { currentChannelId } = FluxHooks.useStateFromStores(
     [SelectedChannelStore],
     () => ({
       currentChannelId: SelectedChannelStore.getVoiceChannelId(),
