@@ -16,15 +16,17 @@ export const RejoinPanelButton = (): React.ReactElement | null => {
       if (
         current?.currentChannelId !== previous?.currentChannelId &&
         previous?.currentChannelId != null
-      ) {
+      )
         setLastChannelId(() => previous?.currentChannelId);
-      }
       return false;
     },
   );
 
   React.useEffect(() => {
-    if (lastChannelId == null || currentChannelId === lastChannelId) return () => {};
+    if (lastChannelId == null || currentChannelId === lastChannelId) {
+      if (lastChannelId) setLastChannelId(() => null);
+      return () => {};
+    }
     const timeout = setTimeout(() => {
       setLastChannelId(() => null);
     }, SettingValues.get("time"));

@@ -5,7 +5,7 @@ Easily rejoin a voice chat you've recently left by clicking on a button.
 This plugin is compatible with plugins like Game Activity Toggle.
 
 Direct Download Link: 
-[![dev.tharki.ReJoinVC.asar](https://img.shields.io/github/downloads/YofukashiNo/ReJoinVC/total.svg?style=social&label=Direct%20Download)](https://GitHub.com/YofukashiNo/ReJoinVC/releases/latest/download/dev.tharki.ReJoinVC.asar)
+[![dev.tharki.ReJoinVC.asar](https://img.shields.io/github/downloads/yofukashino/ReJoinVC/total.svg?style=social&label=Direct%20Download)](https://GitHub.com/yofukashino/ReJoinVC/releases/latest/download/dev.tharki.ReJoinVC.asar)
 
 
 Install Link:
@@ -17,7 +17,7 @@ Install Link:
 [TheShadowGamer](https://github.com/TheShadowGamer/Rejoin-VC).</sub>
 
 <sub>All the code is rightfully owned by TheShadowGamer. This is a ported plugin and the
-[original license](https://github.com/YofukashiNo/ReJoinVC/blob/main/License) is attached.</sub>
+[original license](https://github.com/yofukashino/ReJoinVC/blob/main/License) is attached.</sub>
 
 ---
 
@@ -42,17 +42,15 @@ Install Link:
 - Just make a pull request
 
 ### How Do I support without pull request?
-- You Can Donate on my [ko-fi](https://ko-fi.com/yofukashino) or UPI at `yofukashi.no.singh@fam`
-
-[![Buy Me a Coffee at ko-fi.com](https://storage.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com/yofukashino)
+- You Can Donate on UPI at `yofukashinooo@oksbi` or Follow me on twitch [@yofukashino_](https://twitch.tv/yofukashino_)
 
 ### Where can I find other plugins by you?
 
-You can find them [here](https://github.com/YofukashiNo/RepluggedPlugins)
+You can find them [here](https://github.com/yofukashino/RepluggedPlugins)
 
 ### This plugin isn't listed in the all plugin list?
 
-PRs are appreciated or just make an issue on the [repo](https://github.com/YofukashiNo/RepluggedPlugins)
+PRs are appreciated or just make an issue on the [repo](https://github.com/yofukashino/RepluggedPlugins)
 
 
 ### Where can I find the support?
